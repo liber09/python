@@ -1,0 +1,42 @@
+[
+    {
+        "model": "restaurant",
+        "pk": 1,
+        "fields": {
+            "name": "Haket",
+            "city": "Gothenburg",
+            "street": "storgatan 26",
+            "postalcode": "56532"
+        }
+    },
+    {
+        "model": "restaurant",
+        "pk": 2,
+        "fields": {
+            "name": "Taj mahal",
+            "city": "Stockholm",
+            "street": "odengatan 26",
+            "postalcode": "23564"
+        }
+    },
+    {
+        "model": "restaurant",
+        "pk": 3,
+        "fields": {
+            "name": "Lilla bangkok",
+            "city": "Malmö",
+            "street": "Möllevångstorg 1",
+            "postalcode": "14568"
+        }
+    },
+    {
+        "model": "restaurant",
+        "pk": 4,
+        "fields": {
+            "name": "Rökeriet",
+            "city": "Halmstad",
+            "street": "Svenssons gata 23",
+            "postalcode": "45348"
+        }
+    }
+]

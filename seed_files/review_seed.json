@@ -1,0 +1,52 @@
+[
+    {
+        "model": "review",
+        "pk": 1,
+        "fields": {
+            "personId": 1,
+            "restaurantId": 1,
+            "rating": 4,
+            "review": "Good restaurant, nice food"
+        }
+    },
+    {
+        "model": "review",
+        "pk": 2,
+        "fields": {
+            "personId": 2,
+            "restaurantId": 1,
+            "rating": 3,
+            "review": "Its's okey, no more, no less"
+        }
+    },
+    {
+        "model": "review",
+        "pk": 3,
+        "fields": {
+            "personId": 4,
+            "restaurantId": 4,
+            "rating": 5,
+            "review": "Best place ever"
+        }
+    },
+    {
+        "model": "review",
+        "pk": 4,
+        "fields": {
+            "personId": 3,
+            "restaurantId": 1,
+            "rating": 3,
+            "review": "Decent"
+        }
+    },
+    {
+        "model": "review",
+        "pk": 5,
+        "fields": {
+            "personId": 4,
+            "restaurantId": 2,
+            "rating": 5,
+            "review": "Amazing food"
+        }
+    }
+]

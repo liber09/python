@@ -1,0 +1,64 @@
+[
+    {
+        "model": "person",
+        "pk": 1,
+        "fields": {
+            "firstname": "Alice",
+            "lastname": "Hughes",
+            "born": "1983-01-20",
+            "city": "Gothenburg",
+            "gender": "Female"
+        }
+    },
+    {
+        "model": "person",
+        "pk": 2,
+        "fields": {
+            "firstname": "John",
+            "lastname": "Hughes",
+            "born": "1980-11-10",
+            "city": "Gothenburg",
+            "gender": "Male"
+        }
+    },
+    {
+        "firstname": "Anders",
+        "lastname": "Svensson",
+        "born": "1970-05-10",
+        "city": "Skara",
+        "gender": "Male"
+    },
+    {
+        "model": "person",
+        "pk": 3,
+        "fields": {
+            "firstname": "Stina",
+            "lastname": "Olsson",
+            "born": "1985-05-30",
+            "city": "Stockholm",
+            "gender": "Female"
+        }
+    },
+    {
+        "model": "person",
+        "pk": 4,
+        "fields": {
+            "firstname": "Anna",
+            "lastname": "Danielsson",
+            "born": "1978-02-28",
+            "city": "Stockholm",
+            "gender": "Female"
+        }
+    },
+    {
+        "model": "person",
+        "pk": 5,
+        "fields": {
+            "firstname": "Johan",
+            "lastname": "Nilsson",
+            "born": "1988-12-01",
+            "city": "Karlstad",
+            "gender": "Male"
+        }
+    }
+]
