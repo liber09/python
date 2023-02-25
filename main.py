@@ -4,19 +4,18 @@ from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
 app = FastAPI()
-connection_string = "dbname=python_assignment user=admin"
 
 
 
 def call_db(query: str, *args):
-    connection = psycopg2.connect(database="python_assignment",
-user="admin",
-password="20MaximiLLiaN12",
-host="localhost",
-port= '5432')
+    connection = psycopg2.connect(database="postgres",
+    user="admin",
+    password="20MaximiLLiaN12",
+    host="localhost")
+
     cursor = connection.cursor()
-    res = cursor.execute(query, args)
-    data = res.fetchall()
+    cursor.execute(query, args)
+    data = cursor.fetchall()
     cursor.close()
     connection.commit()
     connection.close()
@@ -72,3 +71,9 @@ def seedPerson():
 def seedPerson():
     seedPerson
     return "Db seeded with data"
+
+@app.get("/getPersons")
+def get_person():
+    get_person_query = """SELECT * FROM person"""
+    data = call_db(get_person_query)
+    return data
