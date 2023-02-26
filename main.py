@@ -36,36 +36,32 @@ def create_database():
 
 @app.get("/")
 def root():
-    return "Hello"
+    return "Hello Linda"
 
 @app.get("/create")
 def root():
     create_database()
     return "DB Created"
-
-@app.get("/test")
-async def test():
-    return {"message": "Test"}
-
-def seedPerson():
-    create_person = """
-    INSERT INTO person (
-    first_name, 
-    last_name,
-    born,
+@app.get("/seedRestaurant")
+def seed_restaurant():
+    create_restaurant = """
+    INSERT INTO restaurant (
+    name, 
     city,
-    gender
+    street,
+    postalcode
     ) VALUES (
-    ?, ?, ?, ?, ?
+    ?, ?, ?, ?
     )
     """
 
-    with open("seed_files/person_seed.json", "r") as person_seed:
-        data = json.load(person_seed)
+    with open("seed_files/restaurant_seed.json", "r") as restaurant_seed:
+        data = json.load(restaurant_seed)
 
-    for person in data["persons"]:
-        psycopg2.call_db(create_person, person["first_name"], person["last_name"],
-                   person["born_year"], person["city"], person["gender"])
+    for restaurant in data["restaurant"]:
+        psycopg2.call_db(create_restaurant, restaurant["name"], restaurant["city"],
+                   restaurant["street"], restaurant["postalcode"])
+    return "Restaurants seeded"
 
 @app.get("/seedPerson")
 def seedPerson():
@@ -73,7 +69,19 @@ def seedPerson():
     return "Db seeded with data"
 
 @app.get("/getPersons")
-def get_person():
-    get_person_query = """SELECT * FROM person"""
-    data = call_db(get_person_query)
+def get_persons():
+    get_persons_query = """SELECT * FROM person"""
+    data = call_db(get_persons_query)
+    return data
+
+@app.get("/getPerson")
+def get_persons():
+    get_persons_query = """SELECT * FROM person"""
+    data = call_db(get_persons_query)
+    return data
+
+@app.get("/getRestaurants")
+def get_restaurants():
+    get_restaurants_query = """SELECT * FROM restaurant"""
+    data = call_db(get_restaurants_query)
     return data
