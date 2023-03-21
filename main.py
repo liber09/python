@@ -5,7 +5,21 @@ from fastapi.responses import HTMLResponse
 
 app = FastAPI()
 
-
+def print_menu():
+    print(
+        """
+    1: Create database
+    2: Seed database
+    3: Get persons
+    4: Get restaurants
+    5: Get reviews
+    6: Update person
+    7: Post review
+    8: Delete review
+    9: Exit program
+    """
+    )
+    pass
 
 def call_db(query: str, *args):
     connection = psycopg2.connect(database="postgres",
@@ -74,14 +88,44 @@ def get_persons():
     data = call_db(get_persons_query)
     return data
 
-@app.get("/getPerson")
-def get_persons():
-    get_persons_query = """SELECT * FROM person"""
-    data = call_db(get_persons_query)
-    return data
-
 @app.get("/getRestaurants")
 def get_restaurants():
     get_restaurants_query = """SELECT * FROM restaurant"""
     data = call_db(get_restaurants_query)
     return data
+
+def main():
+    print_menu()
+    choice = input("Please choose your action: ")
+    choice = choice.strip()
+    if not str.isdigit(choice):
+        print("Please enter a valid option")
+        return
+
+    match int(choice):
+        case 1:
+            print("1 - Not yet implemented")
+        case 2:
+            print("2 - Not yet implemented")
+        case 3:
+            persons = get_persons()
+            print(persons)
+        case 4:
+            restaurants = get_restaurants()
+            print(restaurants)
+        case 5:
+            print("5 - Not yet implemented")
+        case 6:
+            print("6 - Not yet implemented")
+        case 7:
+            print("7 - Not yet implemented")
+        case 8:
+            print("8 - Not yet implemented")
+        case 9:
+            exit()
+        case _:
+            print("Please enter a valid choice")
+
+
+while __name__ == "__main__":
+    main()
